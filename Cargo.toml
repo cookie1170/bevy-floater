@@ -1,0 +1,11 @@
+[package]
+name = "bevy_floater"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+avian2d = "0.5.0"
+bevy = "0.18.0"
+
+[profile.dev.package."*"]
+opt-level = 3
