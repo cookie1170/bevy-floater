@@ -7,7 +7,7 @@ release ver:
     fi
 
     @echo "Releasing version {{ver}}"
-    sed -r 's/version ?= ?".*"/version = "{{ver}}"/' Cargo.toml > Cargo.toml
+    sed -ir 's/version = ".*"/version = "{{ver}}"/' Cargo.toml
     git add Cargo.toml
     git commit -m "v{{ver}}"
     git tag -a v{{ver}}
