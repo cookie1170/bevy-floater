@@ -5,7 +5,9 @@ edition = "2024"
 license = "MIT"
 description = "A simple physics based floating 2D character controller for the Bevy game engine (with Avian physics)"
 repository = "https://github.com/cookie1170/bevy-floater"
-exclude = [ "justfile" ]
+exclude = ["justfile"]
+keywords = ["bevy", "physics", "avian", "gamedev"]
+categories = ["game-development"]
 
 [dependencies]
 avian2d = "0.5.0"
