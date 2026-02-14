@@ -7,10 +7,11 @@ release ver:
     fi
 
     @echo "Releasing version {{ver}}"
-    sed -ir 's/version = ".*"/version = "{{ver}}"/' Cargo.toml
-    git add Cargo.toml
+    sed -i -r 's/version = ".*"/version = "{{ver}}"/' Cargo.toml
+    cargo generate-lockfile
+    git add Cargo.toml Cargo.lock
     git commit -m "v{{ver}}"
     git tag -a v{{ver}}
     git push --follow-tags
-    gh release create v{{ver}} --notes-from-tag
+    gh release create 'v{{ver}}' -t 'v{{ver}}' --notes-from-tag
     cargo publish
