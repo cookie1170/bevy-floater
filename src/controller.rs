@@ -47,11 +47,11 @@ pub(crate) fn update_controllers(controllers: Query<(&mut Controller, &RayHits, 
 }
 
 impl Controller {
-    /// Default value for [`spring_strength`]
+    /// Default value for [`spring_strength`](Controller::spring_strength)
     pub const DEFAULT_SPRING_STRENGTH: f32 = 512.0;
-    /// Default value for [`spring_damping`]
+    /// Default value for [`spring_damping`](Controller::spring_damping)
     pub const DEFAULT_SPRING_DAMPING: f32 = 32.0;
-    /// Default value for [`ray_penetration`]
+    /// Default value for [`ray_penetration`](Controller::ray_penetration)
     pub const DEFAULT_RAY_PENETRATION: f32 = 32.0;
 
     /// Creates a new [`Controller`] with the specified [`ride_height`](Controller::ride_height). Everything else is the defaults
@@ -84,24 +84,24 @@ impl Controller {
         )
     }
 
-    /// Is the controller grounded (does the raycast with length [`ride_height`] + [`ray_penetration`] collide with anything)?
+    /// Is the controller grounded (does the raycast with length [`ride_height`](Controller::ride_height) + [`ray_penetration`](Controller::ray_penetration) collide with anything)?
     pub fn is_grounded(&self) -> bool {
         self.is_grounded
     }
 
-    /// Set the `[spring_strength]` and return itself
+    /// Set the [`spring_strength`](Controller::spring_strength) and return itself
     pub fn with_spring_strength(mut self, value: f32) -> Self {
         self.spring_strength = value;
         self
     }
 
-    /// Set the `[spring_damping]` and return itself
+    /// Set the [`spring_damping`](Controller::spring_damping) and return itself
     pub fn with_spring_damping(mut self, value: f32) -> Self {
         self.spring_damping = value;
         self
     }
 
-    /// Set the `[ray_penetration]` and return itself
+    /// Set the [`ray_penetration`](Controller::ray_penetration) and return itself
     pub fn with_ray_penetration(mut self, value: f32) -> Self {
         self.ray_penetration = value;
         self
